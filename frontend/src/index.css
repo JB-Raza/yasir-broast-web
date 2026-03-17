@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4 Custom Theme ──────────────────────────────────────── */
+@theme {
+  /* Brand colours */
+  --color-primary:      #C41E3A;
+  --color-primary-dark: #A01830;
+  --color-gold:         #FFD700;
+  --color-gold-dark:    #E6C200;
+  --color-charcoal:     #2D2D2D;
+  --color-lightgray:    #F5F5F5;
+  --color-success:      #28A745;
+  --color-warning:      #FF8C00;
+
+  /* Font families */
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-opensans:   "Open Sans", sans-serif;
+  --font-playfair:   "Playfair Display", serif;
+}
+
+/* ── Base styles ────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #2D2D2D;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Swiper – Hero Banner ────────────────────────────────────────────── */
+.hero-swiper {
+  --swiper-navigation-color: #FFD700;
+  --swiper-pagination-color: #C41E3A;
+  --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.5);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  transition: background 0.3s;
+}
+
+.hero-swiper .swiper-button-next:hover,
+.hero-swiper .swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-swiper .swiper-button-next::after,
+.hero-swiper .swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: 700;
+}
+
+/* ── Swiper – Testimonials ───────────────────────────────────────────── */
+.testimonials-swiper {
+  --swiper-pagination-color: #C41E3A;
+  --swiper-pagination-bullet-inactive-color: #cccccc;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  padding-bottom: 48px !important;
+}
+
+/* ── Utility – section gold underline ──────────────────────────────── */
+.section-title-underline {
+  position: relative;
+  display: inline-block;
+}
+.section-title-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #FFD700;
+  border-radius: 2px;
+}
+
+/* ── Card hover ─────────────────────────────────────────────────────── */
+.menu-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.menu-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Skeleton shimmer ───────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: 8px;
+}
+
+/* ── Category section scroll offset ────────────────────────────────── */
+/*
+   Accounts for:  navbar ~64px + SearchFilter ~68px + CategoryTabs ~48px
+   → total ~180px of sticky headers above
+*/
+.category-section {
+  scroll-margin-top: 180px;
+}
+
+/* ── WhatsApp floating button pulse ────────────────────────────────── */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50%       { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+}
+.whatsapp-btn {
+  animation: whatsapp-pulse 2.4s infinite;
+}
+
+/* ── SweetAlert2 customisations ────────────────────────────────── */
+.swal-popup-rounded {
+  border-radius: 24px !important;
+  padding: 28px !important;
+  max-width: 420px !important;
+}
+.swal-confirm-btn {
+  border-radius: 12px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 12px 32px !important;
+  margin-top: 8px !important;
+}
