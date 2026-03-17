@@ -65,7 +65,7 @@ This website addresses these issues by providing:
 - **react-helmet-async** - SEO management
 yasir-broast-website/
 │
-├── 📂 client/                               # React frontend
+├── 📂 frontend/                               # React frontend
 │   ├── 📂 public/
 │   │   ├── 📄 index.html
 │   │   ├── 📄 manifest.json
